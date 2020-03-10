@@ -2,19 +2,17 @@ package com.itau.cartoes.models;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
+@Table
 public class Cliente {
 	
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
+	@Column
 	private String name;
 	
 	@OneToMany(mappedBy="cliente", fetch=FetchType.LAZY)

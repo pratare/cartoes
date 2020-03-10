@@ -4,35 +4,34 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import com.itau.cartoes.dto.CartaoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.itau.cartoes.models.Cartao;
 import com.itau.cartoes.service.CartaoService;
 
 @RestController
+@RequestMapping("/cartao")
 public class CartaoController {
-	
+
 	@Autowired
-	CartaoService cartaoService;
+	private CartaoService cartaoService;
 	
-	/*@GetMapping("/cartao/{numero}")
-	public Optional<Cartao> exibeCartao(@PathVariable Cartao cartao){
-		return cartaoService.mostrarCartao(cartao);
+	@GetMapping("/{numero}")
+	public Optional<Cartao> exibeCartao(@PathVariable CartaoRequest cartaoRequest){
+		return cartaoService.mostrarCartao(cartaoRequest);
+	}
+
+	@PostMapping
+	public ResponseEntity<Object> cadastrarNovoCartao(@Valid @RequestBody CartaoRequest cartaoRequest){
+		return cartaoService.criarCartao(cartaoRequest);
 	}
 	
-	@PostMapping("/cartao")
-	public ResponseEntity<Object> cadastrarNovoCartao(@Valid @RequestBody Cartao cartao){
-		return cartaoService.criarCartao(cartao);
-	}*/
-	
-/*	@PatchMapping("/cartao/{numero}")*/
-
+//	@PatchMapping("/{numero}")
+//	public ResponseEntity<Object> ativarCartao(@Valid @RequestBody boolean ativo){
+//		return cartaoService.ativarCartao(ativo);
+//	}
 
 }
