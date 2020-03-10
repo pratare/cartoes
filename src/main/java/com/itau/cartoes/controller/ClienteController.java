@@ -27,11 +27,9 @@ ClienteService clienteService;
 		return clienteService.buscarCliente(id);
 	}
 	
-	@PostMapping("/cliente")
-	public ResponseEntity<Object> cadastrarCliente(@Valid @RequestBody Cliente cliente) {
-		return clienteService.cadastrar(cliente);
-	}
-	
-	
+//	@PostMapping("/cliente")
+//	public ResponseEntity<Object> cadastrarCliente(@Valid @RequestBody Cliente cliente) {
+//		return clienteService.cadastrar(cliente);
+//	}
 	
 }
