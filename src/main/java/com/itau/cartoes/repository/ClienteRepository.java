@@ -1,9 +1,9 @@
 package com.itau.cartoes.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.itau.cartoes.models.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
+public interface ClienteRepository extends CrudRepository<Cliente, Integer>{
 
 }
