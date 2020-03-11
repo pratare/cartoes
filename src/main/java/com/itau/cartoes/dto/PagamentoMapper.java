@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.itau.cartoes.dto.request.PagamentoRequest;
 import com.itau.cartoes.dto.response.PagamentoResponse;
+import com.itau.cartoes.dto.response.PagamentoSummaryInListResponse;
 import com.itau.cartoes.models.Cartao;
 import com.itau.cartoes.models.Pagamento;
 
@@ -33,5 +34,16 @@ public class PagamentoMapper {
 		return pagamentoResponse;
 		
 	}
+	
+	public PagamentoSummaryInListResponse toPagamentoSummaryInListResponse(Pagamento pagamento) {
+        PagamentoSummaryInListResponse pagamentoSummaryInListResponse = new PagamentoSummaryInListResponse();
+        pagamentoSummaryInListResponse.setId(pagamento.getId());
+        pagamentoSummaryInListResponse.setDescricao(pagamento.getDescricao());
+        pagamentoSummaryInListResponse.setValor(pagamento.getValor());
+        pagamentoSummaryInListResponse.setCartaoId(pagamento.getCartao().getId());
+
+        return pagamentoSummaryInListResponse;
+    }
+
 	
 }
