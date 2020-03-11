@@ -1,5 +1,5 @@
 package com.itau.cartoes.service;
-import com.itau.cartoes.dto.CartaoRequest;
+import com.itau.cartoes.dto.request.CartaoRequest;
 import com.itau.cartoes.exception.UserNotFoundException;
 import com.itau.cartoes.models.Cartao;
 import com.itau.cartoes.models.Cliente;

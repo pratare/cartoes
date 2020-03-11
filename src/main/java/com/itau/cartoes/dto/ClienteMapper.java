@@ -1,8 +1,9 @@
-package com.itau.cartoes.models;
+package com.itau.cartoes.dto;
 
-import com.itau.cartoes.dto.ClienteDetalheResponse;
-import com.itau.cartoes.dto.ClienteRequest;
-import com.itau.cartoes.dto.ClienteResponse;
+import com.itau.cartoes.dto.request.ClienteRequest;
+import com.itau.cartoes.dto.response.ClienteDetalheResponse;
+import com.itau.cartoes.dto.response.ClienteResponse;
+import com.itau.cartoes.models.Cliente;
 
 public class ClienteMapper {
 

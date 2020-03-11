@@ -1,7 +1,7 @@
-package com.itau.cartoes.dto;
+package com.itau.cartoes.dto.response;
 
-public class ClienteDetalheResponse {
-	
+public class ClienteResponse {
+
 	private Integer id;
 
     private String name;

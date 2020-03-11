@@ -4,11 +4,11 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import com.itau.cartoes.dto.CartaoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.itau.cartoes.dto.request.CartaoRequest;
 import com.itau.cartoes.models.Cartao;
 import com.itau.cartoes.service.CartaoService;
 

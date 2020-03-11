@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.itau.cartoes.dto.ClienteDetalheResponse;
-import com.itau.cartoes.dto.ClienteRequest;
-import com.itau.cartoes.dto.ClienteResponse;
+import com.itau.cartoes.dto.ClienteMapper;
+import com.itau.cartoes.dto.request.ClienteRequest;
+import com.itau.cartoes.dto.response.ClienteDetalheResponse;
+import com.itau.cartoes.dto.response.ClienteResponse;
 import com.itau.cartoes.models.Cliente;
-import com.itau.cartoes.models.ClienteMapper;
 import com.itau.cartoes.service.ClienteService;
 
 

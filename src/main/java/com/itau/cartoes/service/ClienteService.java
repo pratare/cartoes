@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.itau.cartoes.dto.ClienteRequest;
+import com.itau.cartoes.dto.request.ClienteRequest;
 import com.itau.cartoes.exception.UserNotFoundException;
 import com.itau.cartoes.models.Cliente;
 import com.itau.cartoes.repository.ClienteRepository;
