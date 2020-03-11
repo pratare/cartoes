@@ -3,7 +3,7 @@ package com.itau.cartoes.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Cliente não encontrado")
 public class UserNotFoundException extends RuntimeException {
 
 	/**
