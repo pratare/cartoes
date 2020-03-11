@@ -21,6 +21,8 @@ public class Cartao {
 	@JsonIgnore
 	private Cliente cliente;
 	
+	private boolean ativo; 
+	
 	public Cartao() {
 		
 	}
@@ -52,6 +54,14 @@ public class Cartao {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 		
 }

@@ -7,6 +7,8 @@ public class CartaoDetalheResponse {
     private String numero;
 
     private Integer clienteId;
+    
+    private boolean ativo;
 
 	public Integer getId() {
 		return id;
@@ -31,6 +33,13 @@ public class CartaoDetalheResponse {
 	public void setClienteId(Integer clienteId) {
 		this.clienteId = clienteId;
 	}
-    
 
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+    
 }
