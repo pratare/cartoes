@@ -1,10 +1,13 @@
 package com.itau.cartoes.dto;
 
+import org.springframework.stereotype.Component;
+
 import com.itau.cartoes.dto.request.ClienteRequest;
 import com.itau.cartoes.dto.response.ClienteDetalheResponse;
 import com.itau.cartoes.dto.response.ClienteResponse;
 import com.itau.cartoes.models.Cliente;
 
+@Component
 public class ClienteMapper {
 
     public Cliente toCliente(ClienteRequest clienteRequest){

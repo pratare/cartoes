@@ -2,7 +2,7 @@ package com.itau.cartoes.dto.response;
 
 public class CartaoResponse {
 	
-	 private Integer id;
+	private Integer id;
 
     private String numero;
 

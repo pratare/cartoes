@@ -1,18 +1,12 @@
 package com.itau.cartoes.service;
-import com.itau.cartoes.dto.request.CartaoRequest;
-import com.itau.cartoes.exception.UserNotFoundException;
-import com.itau.cartoes.models.Cartao;
-import com.itau.cartoes.models.Cliente;
-import com.itau.cartoes.repository.CartaoRepository;
-import com.itau.cartoes.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
-import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.itau.cartoes.exception.CartaoNotFoundException;
+import com.itau.cartoes.models.Cartao;
+import com.itau.cartoes.repository.CartaoRepository;
 
 @Component
 public class CartaoService {
@@ -20,15 +14,16 @@ public class CartaoService {
     @Autowired
     private CartaoRepository cartaoRepository;
 
-    @Autowired
-    private ClienteRepository clienteRepository;
 
-    public Optional<Cartao> mostrarCartao(CartaoRequest cartaoRequest) {
-        List<Cartao> cartaoBuscado = (List<Cartao>) cartaoRepository.findAll();
-        if(cartaoBuscado.get(0).getNumeroCartao() == cartaoRequest.getNumero()) {
-            throw new UserNotFoundException("numero cartao - "+ cartaoRequest.getNumero());
+    public Cartao mostrarCartao(String numero) {
+    	Optional<Cartao> cartaoOptional = cartaoRepository.getByNumero(numero);
+
+        if(!cartaoOptional.isPresent()) {
+            throw new CartaoNotFoundException();
         }
-        return cartaoRepository.findById(cartaoBuscado.get(0));
+
+        return cartaoOptional.get();
+
     }
 
     public Cartao criarCartao(Cartao cartao) {

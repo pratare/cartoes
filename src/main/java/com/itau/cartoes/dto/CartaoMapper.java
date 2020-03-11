@@ -1,10 +1,13 @@
 package com.itau.cartoes.dto;
 
+import org.springframework.stereotype.Component;
+
 import com.itau.cartoes.dto.request.CartaoRequest;
 import com.itau.cartoes.dto.response.CartaoResponse;
 import com.itau.cartoes.models.Cartao;
 import com.itau.cartoes.models.Cliente;
 
+@Component
 public class CartaoMapper {
 	
 	public Cartao toCartao(CartaoRequest cartaoRequest){

@@ -1,9 +1,16 @@
 package com.itau.cartoes.dto.request;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class CartaoRequest {
 
+	@NotBlank
+    @Size(min = 3, max = 9)
     private String numero;
 
+    @NotNull
     private Integer clienteId;
 
     public String getNumero() {
@@ -21,4 +28,5 @@ public class CartaoRequest {
     public void setClienteId(Integer clienteId) {
         this.clienteId = clienteId;
     }
+
 }
