@@ -31,23 +31,11 @@ public class CartaoService {
         return cartaoRepository.findById(cartaoBuscado.get(0));
     }
 
-    public ResponseEntity<Object> criarCartao(CartaoRequest cartaoRequest) {
-
-        Optional<Cliente> user = clienteRepository.findById(cartaoRequest.getClienteId());
-        if(!user.isPresent()) {
-            throw new UserNotFoundException("id - "+ cartaoRequest.getClienteId());
-        }
-
-        Cartao cartaoCriado = new Cartao();
-        cartaoCriado.setNumeroCartao(cartaoRequest.getNumero());
-        cartaoRepository.save(cartaoCriado);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(cartaoCriado.getId()).toUri();
-
-        return ResponseEntity.created(location).build();
+    public Cartao criarCartao(Cartao cartao) {
+    	
+    	cartao = cartaoRepository.save(cartao);
+    	
+        return cartao;
     }
 
 //    public ResponseEntity<Object> ativarCartao(boolean ativo) {
