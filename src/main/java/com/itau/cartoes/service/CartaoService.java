@@ -27,19 +27,17 @@ public class CartaoService {
     }
 
     public Cartao criarCartao(Cartao cartao) {
-    	
     	cartao = cartaoRepository.save(cartao);
     	
         return cartao;
     }
 
-//    public ResponseEntity<Object> ativarCartao(boolean ativo) {
-//
-//        Optional<Cartao> cartaoBuscado = cartaoRepository.findById(id);
-//        if(!cartaoBuscado.isPresent()) {
-//            throw new UserNotFoundException("id - "+id);
-//        }
-//        return ResponseEntity.created(location).build();
-//    }
+    public Cartao ativar(String numero, boolean ativo) {
+    	
+    	Cartao cartao = mostrarCartao(numero);
+        cartao.setAtivo(ativo);
+    	
+        return cartaoRepository.save(cartao);
+    }
 
 }
