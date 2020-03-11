@@ -39,5 +39,16 @@ public class CartaoService {
     	
         return cartaoRepository.save(cartao);
     }
+    
+    public Cartao buscarCartao(Integer id) {
+        Optional<Cartao> cartaoOptional = cartaoRepository.findById(id);
+
+        if(!cartaoOptional.isPresent()) {
+            throw new CartaoNotFoundException();
+        }
+
+        return cartaoOptional.get();
+    }
+
 
 }
