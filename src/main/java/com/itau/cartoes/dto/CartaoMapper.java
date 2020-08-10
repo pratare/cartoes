@@ -14,7 +14,7 @@ public class CartaoMapper {
 	
 	public Cartao toCartao(CartaoRequest cartaoRequest){
 		Cartao cartao = new Cartao();
-		cartao.setNumeroCartao(cartaoRequest.getNumero());
+		cartao.setNumero(cartaoRequest.getNumero());
 			
 		Cliente cliente = new Cliente();
         cliente.setId(cartaoRequest.getClienteId());
@@ -27,7 +27,7 @@ public class CartaoMapper {
 	public CartaoResponse toCartaoResponse(Cartao cartao) {
 		CartaoResponse cartaoResponse = new CartaoResponse();
 		cartaoResponse.setId(cartao.getId());
-		cartaoResponse.setNumero(cartao.getNumeroCartao());
+		cartaoResponse.setNumero(cartao.getNumero());
 		cartaoResponse.setAtivo(false);
 		cartaoResponse.setClienteId(cartao.getCliente().getId());
         return cartaoResponse;
@@ -36,7 +36,7 @@ public class CartaoMapper {
 	public CartaoDetalheResponse toCartaoDetalheResponse(Cartao cartao) {
 		CartaoDetalheResponse cartaoDetalheResponse = new CartaoDetalheResponse();
 		cartaoDetalheResponse.setId(cartao.getId());
-		cartaoDetalheResponse.setNumero(cartao.getNumeroCartao());
+		cartaoDetalheResponse.setNumero(cartao.getNumero());
 		cartaoDetalheResponse.setClienteId(cartao.getCliente().getId());
 		cartaoDetalheResponse.setAtivo(cartao.getAtivo());
         return cartaoDetalheResponse;
@@ -46,7 +46,7 @@ public class CartaoMapper {
         CartaoAtivoResponse cartaoAtivoResponse = new CartaoAtivoResponse();
 
         cartaoAtivoResponse.setId(cartao.getId());
-        cartaoAtivoResponse.setNumero(cartao.getNumeroCartao());
+        cartaoAtivoResponse.setNumero(cartao.getNumero());
         cartaoAtivoResponse.setClienteId(cartao.getCliente().getId());
         cartaoAtivoResponse.setAtivo(cartao.getAtivo());
 

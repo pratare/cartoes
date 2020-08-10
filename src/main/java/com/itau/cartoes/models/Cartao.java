@@ -15,7 +15,7 @@ public class Cartao {
 	@GeneratedValue
 	private Integer id;
 	
-	private String numeroCartao;
+	private String numero;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnore
@@ -27,9 +27,9 @@ public class Cartao {
 		
 	}
 
-	public Cartao(String numeroCartao) {
+	public Cartao(String numero) {
 		super();
-		this.numeroCartao = numeroCartao;
+		this.numero = numero;
 	}
 
 	public Integer getId() {
@@ -40,12 +40,12 @@ public class Cartao {
 		this.id = id;
 	}
 
-	public String getNumeroCartao() {
-		return numeroCartao;
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setNumeroCartao(String numeroCartao) {
-		this.numeroCartao = numeroCartao;
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	public Cliente getCliente() {
@@ -63,5 +63,5 @@ public class Cartao {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-		
+
 }
